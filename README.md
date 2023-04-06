@@ -3,7 +3,7 @@
 An open source learning resource, available to all.
 
 This exam is maintained by the Polkadot Blockchain Academy, for the benefit of the entire Rust community.
-The Academy accepts individuals modestly skilled in Rust, and maintain this exam to test help everyone asses their proficiency being of a level we would consider for the program.
+The Academy accepts individuals modestly skilled in Rust, and maintains this exam to help everyone asses their proficiency being of a level we would consider for the program.
 
 We encourage everyone to take this exam for fun, to help assess your own Rust understanding, or as part of your [application to the Polkadot Blockchain Academy](#applying-to-the-polkadot-blockchain-academy).
 
@@ -56,7 +56,7 @@ The entire exam should be completed using Rust stable toolchain with the specifi
 Work through the exam by replacing each occurrence of `todo!()` with your solution to the problem.
 When all the provided tests pass, plus all the additional tests you wrote are passing, your work is finished.
 If you are pushing to any remote servers while solving the exam (as is required for PBA applicants) be sure that the remote servers are not publicly viewable.
-You may not publish solutions to the exam, please read the [License and use policies](#license-and-use-policies) for specifics
+You may not publish solutions to the exam, please read the [License and use policies](#license-and-use-policies) for specifics.
 
 ## Applying to the Polkadot Blockchain Academy
 
@@ -64,7 +64,7 @@ The Polkadot Blockchain Academy is a classroom-based educational program coverin
 The curriculum covers disciplines such as economics, governance, game theory, cryptography, peer-based and distributed network systems, systems and API design, and much more.
 In addition to theoretical modules, students will apply their knowledge and build blockchains and parachains using [Substrate](https://substrate.io).
 
-To apply to the Polkadot Blockchain Academy, please visit https://polkadot.network/development/academy/ that has information location and dates of the current or next cohort, and a form that will start the process for consideration in the next cohort.
+To apply to the Polkadot Blockchain Academy, please visit https://polkadot.network/development/academy/ for information, location, and dates of the current or next cohort, and a form that will start the process for consideration in the next cohort.
 This qualifier exam is just one part of the process and is not, by itself, an application.
 
 ### License and Use Policies
