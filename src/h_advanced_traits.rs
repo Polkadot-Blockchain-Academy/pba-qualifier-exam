@@ -290,7 +290,7 @@ mod tests {
 
 	#[test]
 	fn ic_1() {
-		let ic = InternalCombustion::<3>::new(120);
+		let ic = InternalCombustion::<3>::new(100);
 		assert_eq!(
 			ic.provide_energy(FuelContainer::<Diesel>::new(10)).to_btu(),
 			1000
