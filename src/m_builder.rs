@@ -23,7 +23,7 @@ use crate::e_common_traits::Employee;
 /// ## Example
 ///
 /// ```
-/// # use pba_qualifier::m_builder::EmployeeBuilder;
+/// # use pba_qualifier_exam::m_builder::EmployeeBuilder;
 ///
 /// # fn main() {
 /// let success = EmployeeBuilder::default().name("John".to_string()).uid(42).build();
@@ -117,7 +117,7 @@ pub struct UnIdentified;
 /// ## Example
 ///
 /// ```
-/// use pba_qualifier::m_builder::TypedEmployeeBuilder;
+/// use pba_qualifier_exam::m_builder::TypedEmployeeBuilder;
 ///
 /// # fn main() {
 /// // This is not a result anymore, because we guarantee at compile time that it has name and uid.
@@ -132,7 +132,7 @@ pub struct UnIdentified;
 /// This code will simply fail to compile:
 ///
 /// ```compile_fail
-/// use pba_qualifier::m_builder::TypedEmployeeBuilder;
+/// use pba_qualifier_exam::m_builder::TypedEmployeeBuilder;
 ///
 /// # fn main() {
 /// 	let success = TypedEmployeeBuilder::default().uid(42).build();
