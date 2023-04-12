@@ -64,7 +64,7 @@ The Polkadot Blockchain Academy is a classroom-based educational program coverin
 The curriculum covers disciplines such as economics, governance, game theory, cryptography, peer-based and distributed network systems, systems and API design, and much more.
 In addition to theoretical modules, students will apply their knowledge and build blockchains and parachains using [Substrate](https://substrate.io).
 
-To apply to the Polkadot Blockchain Academy, please visit https://polkadot.network/development/academy/ for information, location, and dates of the current or next cohort, and a form that will start the process for consideration in the next cohort.
+To apply to the Polkadot Blockchain Academy, please visit https://dot.li/pba-github for information, location, and dates of the current or next cohort, and a form that will start the process for consideration in the next cohort.
 This qualifier exam is just one part of the process and is not, by itself, an application.
 
 ### License and Use Policies
