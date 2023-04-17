@@ -5,7 +5,7 @@
 use std::marker::PhantomData;
 
 // You may uncomment and use the following import if you need it. You may also read its
-// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell
+// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell.html
 // use std::cell::RefCell;
 
 #[derive(Eq, PartialEq, Debug, Clone, Copy)]
