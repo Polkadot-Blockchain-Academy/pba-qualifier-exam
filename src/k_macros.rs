@@ -9,7 +9,7 @@
 // Your task here is to create an analogous macro for creating hashmaps pre-populated with literal
 // values. The macro should be called like follows:
 //
-// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6)];
+// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6];
 #[macro_export]
 macro_rules! map {
 	( $($todo:tt)* ) => {
