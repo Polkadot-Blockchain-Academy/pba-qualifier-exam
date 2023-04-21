@@ -9,7 +9,7 @@
 // Your task here is to create an analogous macro for creating hashmaps pre-populated with literal
 // values. The macro should be called like follows:
 //
-// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6)];
+// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6];
 #[macro_export]
 macro_rules! map {
 	( $($todo:tt)* ) => {
@@ -101,7 +101,11 @@ mod tests {
 		// you should be able to make these work.
 		// assert_eq!(Foo::get(), 10);
 		// assert_eq!(Bar::get(), 42);
-		// const CONST: u32 = Baz::get();
-		// assert_eq!(CONST, 42);
+		// assert_eq!(Baz::get(), 21);
+
+		// As an extra, ungraded, challenge, try to make this work.
+		// This is not part of the main problem because it requires the nightly compiler.
+		// const CONST: u16 = Baz::get();
+		// assert_eq!(CONST, 21);
 	}
 }

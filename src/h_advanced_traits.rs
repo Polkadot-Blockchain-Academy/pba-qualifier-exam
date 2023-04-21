@@ -5,7 +5,7 @@
 use std::marker::PhantomData;
 
 // You may uncomment and use the following import if you need it. You may also read its
-// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell
+// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell.html
 // use std::cell::RefCell;
 
 #[derive(Eq, PartialEq, Debug, Clone, Copy)]
@@ -114,7 +114,8 @@ pub trait ProvideEnergy<F: Fuel> {
 	/// Convert the amount of fuel in `f` with an exact efficiency of `e`.
 	///
 	/// NOTE: all efficiencies are interpreted as u8 values that can be at most 100, and represent a
-	/// percent.
+	/// percent. If an efficiency above 100 is supplied, the code should treat it as 100. That is to
+	/// say that the efficiency is "saturating" at 100%.
 	///
 	/// This method must be provided as it will be the same in all implementations.
 	fn provide_energy_with_efficiency(&self, f: FuelContainer<F>, e: u8) -> <F as Fuel>::Output {
@@ -158,7 +159,8 @@ impl<const DECAY: u32, F: Fuel> ProvideEnergy<F> for InternalCombustion<DECAY> {
 
 /// A hypothetical device that can, unlike the `InternalCombustion`, consume **any fuel** that's of
 /// type `trait Fuel`. It can provide a fixed efficiency regardless of fuel type. As before,
-/// EFFICIENCY is a u8 whose value should not exceed 100 and is interpreted as a percent.
+/// EFFICIENCY is a u8 whose value should not exceed 100, is interpreted as a percent, and should
+/// saturate at 100% when a higher value is supplied.
 pub struct OmniGenerator<const EFFICIENCY: u8>;
 
 // NOTE: implement `ProvideEnergy` for `OmniGenerator` using only one `impl` block.
