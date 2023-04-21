@@ -1,0 +1,130 @@
+From 96c7be0e131f726329a31db858bd0e858001ff67 Mon Sep 17 00:00:00 2001
+From: Joshy Orndorff <noreply@noreply.com>
+Date: Fri, 21 Apr 2023 11:35:47 -0400
+Subject: [PATCH] ucb patch
+
+---
+ src/h_advanced_traits.rs  |  8 +++++---
+ src/i_extension_traits.rs |  9 ++++++---
+ src/k_macros.rs           | 10 +++++++---
+ src/m_builder.rs          |  6 +++---
+ 4 files changed, 21 insertions(+), 12 deletions(-)
+
+diff --git a/src/h_advanced_traits.rs b/src/h_advanced_traits.rs
+index ab29cdf..7e27f7e 100644
+--- a/src/h_advanced_traits.rs
++++ b/src/h_advanced_traits.rs
+@@ -5,7 +5,7 @@
+ use std::marker::PhantomData;
+ 
+ // You may uncomment and use the following import if you need it. You may also read its
+-// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell
++// documentation at https://doc.rust-lang.org/std/cell/struct.RefCell.html
+ // use std::cell::RefCell;
+ 
+ #[derive(Eq, PartialEq, Debug, Clone, Copy)]
+@@ -114,7 +114,8 @@ pub trait ProvideEnergy<F: Fuel> {
+ 	/// Convert the amount of fuel in `f` with an exact efficiency of `e`.
+ 	///
+ 	/// NOTE: all efficiencies are interpreted as u8 values that can be at most 100, and represent a
+-	/// percent.
++	/// percent. If an efficiency above 100 is supplied, the code should treat it as 100. That is to
++	/// say that the efficiency is "saturating" at 100%.
+ 	///
+ 	/// This method must be provided as it will be the same in all implementations.
+ 	fn provide_energy_with_efficiency(&self, f: FuelContainer<F>, e: u8) -> <F as Fuel>::Output {
+@@ -158,7 +159,8 @@ impl<const DECAY: u32, F: Fuel> ProvideEnergy<F> for InternalCombustion<DECAY> {
+ 
+ /// A hypothetical device that can, unlike the `InternalCombustion`, consume **any fuel** that's of
+ /// type `trait Fuel`. It can provide a fixed efficiency regardless of fuel type. As before,
+-/// EFFICIENCY is a u8 whose value should not exceed 100 and is interpreted as a percent.
++/// EFFICIENCY is a u8 whose value should not exceed 100, is interpreted as a percent, and should
++/// saturate at 100% when a higher value is supplied.
+ pub struct OmniGenerator<const EFFICIENCY: u8>;
+ 
+ // NOTE: implement `ProvideEnergy` for `OmniGenerator` using only one `impl` block.
+diff --git a/src/i_extension_traits.rs b/src/i_extension_traits.rs
+index a76f5ca..fb97278 100644
+--- a/src/i_extension_traits.rs
++++ b/src/i_extension_traits.rs
+@@ -62,13 +62,16 @@ impl OutcomeCount for Vec<Outcome> {
+ // But all of that is a lot of boilerplate. Wouldn't it be nice to have a `derive` macro that
+ // exactly does this, on any enum?
+ //
+-// So, for any `enum Foo { X, Y, .. }`, `#[derive(CountOf)]` would generate a trait `CountOfFoo`,
+-// with functions named `fn x_count`, `fn y_count` etc. Finally, it would implement `CountOfFoo` for
+-// `Vec<Foo>`.
++// In that case, for any `enum Foo { X, Y, .. }`, `#[derive(CountOf)]` would generate a trait
++// `CountOfFoo`, with functions named `fn x_count`, `fn y_count` etc. Finally, it would implement
++// `CountOfFoo` for `Vec<Foo>`.
+ //
+ // And heck, you could then easily implement it for other collections of `Foo`, such as
+ // `HashMap<_, Foo>` etc.
+ 
++// This problem does NOT require you to implement such a macro. Perhaps you will encounter that
++// macro problem somewhere in the future.
++
+ /// This function is not graded. It is just for collecting feedback.
+ /// On a scale from 0 - 255, with zero being extremely easy and 255 being extremely hard,
+ /// how hard did you find this section of the exam.
+diff --git a/src/k_macros.rs b/src/k_macros.rs
+index b0daad2..d2f9153 100644
+--- a/src/k_macros.rs
++++ b/src/k_macros.rs
+@@ -9,7 +9,7 @@
+ // Your task here is to create an analogous macro for creating hashmaps pre-populated with literal
+ // values. The macro should be called like follows:
+ //
+-// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6)];
++// let map1: HashMap<u32, u32> = map![1 =>2, 3 => 4, 5 => 6];
+ #[macro_export]
+ macro_rules! map {
+ 	( $($todo:tt)* ) => {
+@@ -101,7 +101,11 @@ mod tests {
+ 		// you should be able to make these work.
+ 		// assert_eq!(Foo::get(), 10);
+ 		// assert_eq!(Bar::get(), 42);
+-		// const CONST: u32 = Baz::get();
+-		// assert_eq!(CONST, 42);
++		// assert_eq!(Baz::get(), 21);
++
++		// As an extra, ungraded, challenge, try to make this work.
++		// This is not part of the main problem because it requires the nightly compiler.
++		// const CONST: u16 = Baz::get();
++		// assert_eq!(CONST, 21);
+ 	}
+ }
+diff --git a/src/m_builder.rs b/src/m_builder.rs
+index 0479a41..15fc8ee 100644
+--- a/src/m_builder.rs
++++ b/src/m_builder.rs
+@@ -23,7 +23,7 @@ use crate::e_common_traits::Employee;
+ /// ## Example
+ ///
+ /// ```
+-/// # use pba_entrance_exam::m_builder::EmployeeBuilder;
++/// # use pba_qualifier_exam::m_builder::EmployeeBuilder;
+ ///
+ /// # fn main() {
+ /// let success = EmployeeBuilder::default().name("John".to_string()).uid(42).build();
+@@ -117,7 +117,7 @@ pub struct UnIdentified;
+ /// ## Example
+ ///
+ /// ```
+-/// use pba_entrance_exam::m_builder::TypedEmployeeBuilder;
++/// use pba_qualifier_exam::m_builder::TypedEmployeeBuilder;
+ ///
+ /// # fn main() {
+ /// // This is not a result anymore, because we guarantee at compile time that it has name and uid.
+@@ -132,7 +132,7 @@ pub struct UnIdentified;
+ /// This code will simply fail to compile:
+ ///
+ /// ```compile_fail
+-/// use pba_entrance_exam::m_builder::TypedEmployeeBuilder;
++/// use pba_qualifier_exam::m_builder::TypedEmployeeBuilder;
+ ///
+ /// # fn main() {
+ /// 	let success = TypedEmployeeBuilder::default().uid(42).build();
+-- 
+2.34.1
+
