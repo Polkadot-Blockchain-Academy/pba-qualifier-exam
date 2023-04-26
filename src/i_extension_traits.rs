@@ -57,6 +57,8 @@ impl OutcomeCount for Vec<Outcome> {
 	}
 }
 
+// Now we can call these functions directly on `Vec<Outcome>`.
+
 /// This function is not graded. It is just for collecting feedback.
 /// On a scale from 0 - 255, with zero being extremely easy and 255 being extremely hard,
 /// how hard did you find this section of the exam.
