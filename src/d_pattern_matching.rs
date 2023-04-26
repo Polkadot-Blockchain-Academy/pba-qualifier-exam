@@ -2,7 +2,7 @@
 //! statement of the `matches!()` macro, if you feel like having an "1-liner".
 //!
 //! You can try and write them imperatively at first as well, but at the end of the day, we want you
-//! to write them using the `match!` or `matches!`.
+//! to write them using the `match` keyword or the `matches!` macro.
 
 /// Returns true if the last two strings in the vector start with `PBA`.
 pub fn match_1(input: Vec<String>) -> bool {
