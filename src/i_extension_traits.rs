@@ -57,21 +57,6 @@ impl OutcomeCount for Vec<Outcome> {
 	}
 }
 
-// Now we can call these functions directly on `Vec<Outcome>`.
-
-// But all of that is a lot of boilerplate. Wouldn't it be nice to have a `derive` macro that
-// exactly does this, on any enum?
-//
-// In that case, for any `enum Foo { X, Y, .. }`, `#[derive(CountOf)]` would generate a trait
-// `CountOfFoo`, with functions named `fn x_count`, `fn y_count` etc. Finally, it would implement
-// `CountOfFoo` for `Vec<Foo>`.
-//
-// And heck, you could then easily implement it for other collections of `Foo`, such as
-// `HashMap<_, Foo>` etc.
-
-// This problem does NOT require you to implement such a macro. Perhaps you will encounter that
-// macro problem somewhere in the future.
-
 /// This function is not graded. It is just for collecting feedback.
 /// On a scale from 0 - 255, with zero being extremely easy and 255 being extremely hard,
 /// how hard did you find this section of the exam.
