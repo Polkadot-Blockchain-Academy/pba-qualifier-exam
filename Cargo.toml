@@ -12,4 +12,4 @@ publish = false
 
 [dependencies]
 # There should be NO external additions here, per the honor code.
-# If you want or need to create a local dependancy, you may do so.
+# If you want or need to create a local dependency, you may do so.
