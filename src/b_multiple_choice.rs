@@ -258,7 +258,7 @@ pub fn answer_6() -> char {
 ///
 /// fn string_to_int_in_range(s: String) -> Result<u32, OutOfRangeError> {
 /// 	// Given: The u32::from_str_radix function returns Result<u32, ParseIntError>
-/// 	let n: u32 = u32::from_str_radix(&s,10)?;
+/// 	let n: u32 = u32::from_str_radix(&s, 10)?;
 ///
 /// 	match n {
 /// 		n if n < 5 => Err(OutOfRangeError::TooSmall),
