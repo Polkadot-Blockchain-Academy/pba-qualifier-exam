@@ -25,7 +25,7 @@ macro_rules! map {
 /// generate this implementation for us, as such:
 ///
 /// ```
-/// use pba_qualifier_exam:impl_get;
+/// use pba_qualifier_exam::impl_get;
 /// impl_get! {
 /// 	// implements `Get<u32>` for `struct Six`
 /// 	Six: u32 = 6;
@@ -89,6 +89,8 @@ mod tests {
 
 	#[test]
 	fn impl_get() {
+		use super::Get;
+		
 		impl_get!(
 			// should generate `struct Foo` that implements `Get<u32>`
 			Foo: u32 = 10;
@@ -102,6 +104,7 @@ mod tests {
 		// assert_eq!(Foo::get(), 10);
 		// assert_eq!(Bar::get(), 42);
 		// assert_eq!(Baz::get(), 21);
+		assert_eq!(true, false, "Make sure to remove this line and uncomment the tests above");
 
 		// As an extra, ungraded, challenge, try to make this work.
 		// This is not part of the main problem because it requires the nightly compiler.
