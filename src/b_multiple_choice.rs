@@ -8,8 +8,8 @@
 //! code snippets**. You may only trace them manually in your head or on paper. Pretend that this
 //! portion of the exam is being administered on paper, and no computer is available at all.
 //!
-//! To enable us to auto-grade your answer, you implement the code that returns the `char` representing
-//! your answer.
+//! To enable us to auto-grade your answer, you implement the code that returns the `char`
+//! representing your answer.
 //!
 //! If you would like a rendered and styled version of these questions simply build an open the Rust
 //! Docs for this module, and navigate the the multiple choice question module docs by the command:
