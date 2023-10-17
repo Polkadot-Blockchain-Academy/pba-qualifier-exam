@@ -25,7 +25,7 @@ macro_rules! map {
 /// generate this implementation for us, as such:
 ///
 /// ```
-/// use pba_qualifier_exam:impl_get;
+/// use pba_qualifier_exam::impl_get;
 /// impl_get! {
 /// 	// implements `Get<u32>` for `struct Six`
 /// 	Six: u32 = 6;
