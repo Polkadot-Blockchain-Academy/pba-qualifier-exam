@@ -121,6 +121,7 @@ pub struct UnIdentified;
 ///
 /// # fn main() {
 /// // This is not a result anymore, because we guarantee at compile time that it has name and uid.
+///     use pba_qualifier_exam::m_builder::TypedEmployeeBuilder;
 /// 	let employee =
 /// 	TypedEmployeeBuilder::default().name("John".to_string()).uid(42).wage(77).build();
 /// assert_eq!(employee.name, "John");
