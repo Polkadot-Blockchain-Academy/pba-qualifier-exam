@@ -18,7 +18,7 @@ pub struct Employee {
 	pub uid: u32,
 }
 
-// We want to consider two employee instances equal iff they have the same `uid`.
+// We want to consider two employee instances equal if they have the same `uid`.
 
 impl PartialEq for Employee {
 	fn eq(&self, other: &Self) -> bool {
