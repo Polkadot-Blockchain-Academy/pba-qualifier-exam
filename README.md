@@ -3,7 +3,7 @@
 An open source learning resource, available to all.
 
 This exam is maintained by the Polkadot Blockchain Academy, for the benefit of the entire Rust community.
-The Academy accepts individuals modestly skilled in Rust, and maintains this exam to help everyone asses their proficiency being of a level we would consider for the program.
+The Academy accepts individuals modestly skilled in Rust, and maintains this exam to help everyone assess their proficiency being of a level we would consider for the program.
 
 We encourage everyone to take this exam for fun, to help assess your own Rust understanding, or as part of your [application to the Polkadot Blockchain Academy](#applying-to-the-polkadot-blockchain-academy).
 
