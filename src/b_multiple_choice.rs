@@ -12,7 +12,7 @@
 //! representing your answer.
 //!
 //! If you would like a rendered and styled version of these questions simply build an open the Rust
-//! Docs for this module, and navigate the the multiple choice question module docs by the command:
+//! Docs for this module, and navigate the multiple choice question module docs by the command:
 //!
 //! ```sh
 //! cargo doc --open
