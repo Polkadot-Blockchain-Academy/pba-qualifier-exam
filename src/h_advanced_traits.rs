@@ -45,7 +45,7 @@ impl From<BTU> for Calorie {
 pub trait Fuel {
 	/// The output unit of the energy density.
 	///
-	/// Think about this: why did we chose this to be an associated type rather than a generic?
+	/// Think about this: why did we choose this to be an associated type rather than a generic?
 	type Output: Into<BTU> + From<BTU>;
 
 	/// The amount of energy contained in a single unit of fuel.

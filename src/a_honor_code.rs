@@ -35,7 +35,7 @@ pub fn multiple_choice_no_run() -> bool {
 
 /// The coding portion of the exam allows access to books, and websites such as the Rust book, the
 /// standard library reference, and others _explicitly listed_ in the exam prompts themselves.
-/// However, you not allowed to look up direct implementation of the specific algorithms we are
+/// However, you are not allowed to look up direct implementation of the specific algorithms we are
 /// asking you to write.
 ///
 /// Examples of allowed searches:
@@ -54,7 +54,7 @@ pub fn coding_no_copy() -> bool {
 	todo!()
 }
 
-/// You not allowed to use external dependencies from `crates.io` or elsewhere unless
+/// You are not allowed to use external dependencies from `crates.io` or elsewhere unless
 /// explicitly stated in the problem.
 pub fn coding_no_external_deps() -> bool {
 	// If you have followed this rule, return `true`
